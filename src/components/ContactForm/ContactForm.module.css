@@ -1,0 +1,13 @@
+.btn {
+    display: block;
+    margin: 10px auto;
+    border: 0;
+    border-radius: 3px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.07);
+    background: rgb(144, 196, 255);
+}

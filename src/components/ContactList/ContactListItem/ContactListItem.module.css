@@ -1,0 +1,20 @@
+.list {
+    list-style: none;
+    padding: 25px;
+}
+
+.text {
+    margin: 0 10px;
+}
+
+.button {
+    border-radius: 3px;
+    border: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    background: rgb(108, 200, 234);
+}
