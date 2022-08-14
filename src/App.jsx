@@ -46,21 +46,21 @@ export class App extends React.Component {
     }));
   };
 
-  onFilteredContacts = () =>
+  onChangeFilter = event => {
+    this.setState({ filter: event.currentTarget.value });
+  };
+
+  onFilterContacts = () =>
     this.state.filter
       ? this.state.contacts.filter(({ name }) =>
           name.toLowerCase().includes(this.state.filter.toLowerCase())
         )
       : this.state.contacts;
 
-  onChangeFilter = event => {
-    this.setState({ filter: event.currentTarget.value });
-  };
-
   render() {
     const onAddContact = this.onAddContact;
     const { filter } = this.state;
-    const filteredContacts = this.onFilteredContacts();
+    const filteredContacts = this.onFilterContacts();
     const onChangeFilter = this.onChangeFilter;
     const onRemoveContact = this.onRemoveContact;
 
