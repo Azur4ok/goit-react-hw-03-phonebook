@@ -46,7 +46,7 @@ export class App extends React.Component {
     }));
   };
 
-  filteredContacts = () =>
+  onFilteredContacts = () =>
     this.state.filter
       ? this.state.contacts.filter(({ name }) =>
           name.toLowerCase().includes(this.state.filter.toLowerCase())
@@ -60,7 +60,7 @@ export class App extends React.Component {
   render() {
     const onAddContact = this.onAddContact;
     const { filter } = this.state;
-    const filteredContacts = this.filteredContacts();
+    const filteredContacts = this.onFilteredContacts();
     const onChangeFilter = this.onChangeFilter;
     const onRemoveContact = this.onRemoveContact;
 
