@@ -31,7 +31,7 @@ export class App extends React.Component {
   onAddContact = ({ name, number }) => {
     const newContact = { id: nanoid(), name, number };
 
-    !this.state.contacts.some(
+    !this.state.contacts.find(
       contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
     )
       ? this.setState(({ contacts }) => ({
