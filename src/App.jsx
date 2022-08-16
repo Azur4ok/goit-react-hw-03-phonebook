@@ -50,26 +50,22 @@ export class App extends React.Component {
     this.setState({ filter: event.currentTarget.value });
   };
 
-  onFilterContacts = () =>
-    this.state.filter
+  render() {
+    const onAddContact = this.onAddContact;
+    const onChangeFilter = this.onChangeFilter;
+    const onRemoveContact = this.onRemoveContact;
+    const filteredContacts = this.state.filter
       ? this.state.contacts.filter(({ name }) =>
           name.toLowerCase().includes(this.state.filter.toLowerCase())
         )
       : this.state.contacts;
-
-  render() {
-    const onAddContact = this.onAddContact;
-    const { filter } = this.state;
-    const filteredContacts = this.onFilterContacts();
-    const onChangeFilter = this.onChangeFilter;
-    const onRemoveContact = this.onRemoveContact;
 
     return (
       <div className={styles.app}>
         <h1>Phonebook</h1>
         <ContactForm onAddContact={onAddContact} />
         <h2>Contacts</h2>
-        <Filter filter={filter} onChange={onChangeFilter} />
+        <Filter filter={this.state.filter} onChange={onChangeFilter} />
         {this.state.contacts.length ? (
           <ContactList
             contacts={filteredContacts}
